@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset='UTF-8'>
+<link rel='stylesheet' href='sql.css' />
+<title>Atelier 1</title>
+</head>
+<body>
+
+<h1>Atelier 1 – Requêtes Simples</h1>
+
+
+<p>1. Créer une requête destinée à
+afficher le nom, le salaire des employés gagnant plus de 12&nbsp;000.</p>
+
+<div align=center>
+
+<table style='border-collapse:collapse'>
+ <tr>
+  <th>LAST_NAME
+  </th>
+  <th>SALARY
+  </th>
+ </tr>
+ <tr>
+  <td>King
+  </td>
+  <td >24 000,00
+  </td>
+ </tr>
+ <tr>
+  <td>...
+  </td>
+  <td>...
+  </td>
+ </tr>
+ <tr>
+  <td>Hartstein
+  </td>
+  <td>13 000,00
+  </td>
+ </tr>
+</table>
+<br/><br/>
+<p>2. Créer une requête destinée à afficher
+le nom et le numéro de service de l’employé dont le numéro est 176.</p>
+
+<table>
+ <tr>
+  <th>LAST_NAME
+  </th>
+  <th>DEPARTMENT_ID</th>
+ </tr>
+ <tr>
+  <td>Taylor</td>
+  <td>80</td>
+ </tr>
+</table>
+
+<p>3. Modifier la requête créée à
+l’étape 1 pour afficher les nom et le salaire de tous les employés dont le
+salaire n’est pas compris entre 5&nbsp;000 et 12&nbsp;000.</p>
+<table><tr><th>LAST_NAME</th>
+  <th>SALARY</th>
+ </tr>
+ <tr>
+  <td>King</td>
+  <td>24 000,00</td>
+ </tr>
+ <tr><td>Kochhar</td>
+  <td>17 000,00</td>
+ </tr>
+ <tr><td>...</td>
+  <td>...</td>
+ </tr>
+ 
+ <tr>
+  <td>Whalen</td>
+  <td>4 400,00</td>
+ </tr>
+</table>
+<br/><br/>
+<p>4. Affichez le nom, l’ID de poste et
+la date d’entrée des employés embauchés entre le 20 février et le 1<sup>er</sup>
+mai 1998. Classez le résultat par date d’embauche croissante.</p>
+
+<table >
+ <tr>
+  <th>LAST_NAME</th>
+  <th>JOB_ID
+  </th>
+  <th>HIRE_DATE
+  </th>
+ </tr>
+ <tr>
+  <td>Matos</td>
+  <td>ST_CLERK</td>
+  <td>1998-03-15</td>
+ </tr>
+ <tr>
+  <td>Mitoch</td>
+  <td>SA_CLERK</td>
+  <td>1998-03-24</td>
+  </tr>
+  <tr>
+  <td>Taylor</td>
+  <td>SA_REP</td>
+  <td>1998-03-24</td>
+ </tr>
+</table>
+
+<p>5. Affichez le nom et le numéro de
+service de tous les employés des services 20 et 50, classés par ordre
+alphabétique des noms.</p>
+
+<div align=center>
+
+<table>
+ <tr>
+  <th>LAST_NAME</th>
+  <th>DEPARTMENT_ID</th>
+ </tr>
+ <tr>
+  <td>Davies</td>
+  <td>50</td>
+ </tr>
+ <tr>
+  <td>Fay</td>
+  <td>20</td>
+ </tr>
+ <tr>
+  <td>...</td>
+  <td>...</td>
+ </tr>
+ <tr>
+  <td>Vargas</td>
+  <td >50</td>
+ </tr>
+</table>
+
+<p>6. Faites une copie de la requête
+crée à l’étape 3. Modifiez la pour répertorier le nom et le salaire des
+employés qui gagnent entre 5&nbsp;000 et 12&nbsp;000 et qui appartiennent au
+service 20 ou 50.</p>
+<br/><br/>
+<table>
+ <tr>
+  <th>LAST_NAME</th>
+  <th>SALARY</th>
+ </tr>
+ <tr>
+  <td>Mourgos</td>
+  <td>5 800,00</td>
+ </tr>
+ <tr>
+  <td>Fay</td>
+  <td>6 000,00</td>
+ </tr>
+</table>
+<br/><br/>
+<p>Affichez le nom et la date
+d’embauche de chaque employé entré en 1994.</p>
+
+<table>
+ <tr>
+  <th>LAST_NAME</th>
+  <th>HIRE_DATE</th>
+ </tr>
+ <tr>
+  <td>Higgins</td>
+  <td>1994-06-07</td>
+ </tr>
+ <tr>
+  <td>Gietz</td>
+  <td>1994-06-07</td>
+ </tr>
+</table>
+<br/><br/>
+<p>8. Affichez le nom et l’ID de poste
+de tous les employés qui n’ont pas de manager.</p>
+
+<table>
+ <tr>
+  <th>LAST_NAME</th>
+  <th>JOB_ID</th>
+ </tr>
+ <tr><td>King</td>
+  <td>AD_PRES</td>
+ </tr>
+</table>
+<br/><br/>
+<p>9. Affichez le nom, le salaire et la
+commission de tous les employés qui perçoivent des commissions. Triez les
+données dans l’ordre décroissant des salaires et des commissions.</p>
+
+<table>
+ <tr>
+  <th>LAST_NAME</th>
+  <th>SALARY</th>
+  <th>COMMISSION_PCT</th>
+ </tr>
+ <tr>
+  <td>Abel</td>
+  <td>11 000,00</td>
+  <td >30,00%</td>
+ </tr>
+ <tr>
+  <td>Zlotkey</td>
+  <td>10 500,00</td>
+  <td>20,00%</td>
+ </tr>
+ <tr>
+  <td>Taylor</td>
+  <td>8 600,00</td>
+  <td>20,00%</td>
+ </tr>
+ <tr>
+  <td>Grant</td>
+  <td>7 000,00</td>
+  <td>15,00%</td>
+ </tr>
+</table>
+<br/><br/>
+<p>10. Affichez le nom de tous les
+employés dont la troisième lettre du nom est un ‘a’.</p>
+
+<table>
+ <tr>
+  <th>LAST_NAME</th>
+ </tr>
+ <tr>
+  <td>Grant</td>
+ </tr>
+ <tr>
+  <td>Whalen</td>
+ </tr>
+</table>
+<br/><br/>
+<p>11. Affichez le nom de tous les
+employés dont le nom comporte un ‘a’ et un ‘e’.</p>
+
+<table>
+ <tr>
+  <th>LAST_NAME</th>
+ </tr>
+ <tr>
+  <td>De Haan</td>
+ </tr>
+ <tr>
+  <td>Davies</td>
+ </tr>
+ <tr>
+  <td>Abel</td>
+ </tr>
+ <tr>
+  <td>Whalen</td>
+ </tr>
+ <tr>
+  <td>Hartstein</td>
+ </tr>
+</table>
+<br/><br/>
+<p>12. Affichez le nom, le poste et le
+salaire de tous les représentants ou magasiniers dont le salaire est différent
+de 2&nbsp;500, 3&nbsp;500 ou 7&nbsp;000.</p>
+
+<table>
+ <tr>
+  <th>LAST_NAME</th>
+  <th>JOB_ID</th>
+  <th>SALARY</th>
+ </tr>
+ <tr>
+  <td>Davies</td>
+  <td>ST_CLERK</td>
+  <td>3 100,00</td>
+ </tr>
+ <tr>
+  <td>Matos</td>
+  <td>ST_CLERK</td>
+  <td>2 600,00</td>
+ </tr>
+ <tr>
+  <td>Abel</td>
+  <td>SA_REP</td>
+  <td>11 000,00</td>
+ </tr>
+ <tr>
+  <td>Taylor</td>
+  <td>SA_REP</td>
+  <td>8 600,00</td>
+ </tr>
+</table>
+<br/><br/>
+
+</body>
+
+</html>

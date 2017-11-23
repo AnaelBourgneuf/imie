@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='UTF-8'>
+<link rel='stylesheet' href='sql.css' />
+<title>Atelier 3 - Jointures</title>
+</head>
+<body>
+<h1>Atelier 3 - Jointures</h1>
+<hr>
+<p>1. Écrivez une instruction SQL permettant
+	d'afficher le nom, le numéro de service et le nom de service de tous les
+	employés.</p>
+<table>
+	<tr>
+		<th>LAST_NAME</th>
+		<th>DEPARTMENT_ID</th>
+		<th>DEPARTMENT_NAME</th>
+	</tr><tr>
+		<td>Whalen</td>
+		<td>10</td>
+		<td>Administration</td>
+	</tr><tr>
+		<td>Fay</td>
+		<td>20</td>
+		<td>Marketing</td>
+	</tr><tr>
+		<td>Hartstein</td>
+		<td>20</td>
+		<td>Marketing</td>
+	</tr><tr>
+		<td>...</td>
+		<td>...</td>
+		<td>...</td>
+	</tr>
+</table>
+<br/><br/>
+<p>2. Créez une liste de tous les
+postes du service 80, avec une seule occurrence par poste. Faites apparaître l’emplacement
+du service dans le résultat.</p>
+
+<table><tr><th>JOB_ID</th><th>LOCATION_ID</th></tr>
+		<tr><td>SA_MAN</td><td>2500</td></tr>
+		<tr><td>SA_REP</td><td>2500</td></tr></table>
+<br/><br/>
+<p>3. Écrivez une instruction
+permettant d'afficher le nom, le nom du service, l'ID de lieu et la ville de
+tous les employés qui touchent une commission.</p>
+
+<table><tr><th>LAST_NAME</th><th>DEPARTMENT_NAME</th><th>LOCATION_ID</th><th>CITY</th></tr>
+		<tr><td>Zlotkey
+  </td>
+  <td >Sales
+  </td>
+  <td >2500
+  </td>
+  <td >Oxford
+  </td>
+ </tr>
+ <tr >
+  <td >Abel
+  </td>
+  <td>Sales
+  </td>
+  <td >2500
+  </td>
+  <td >Oxford
+  </td>
+ </tr>
+ <tr ><td>Taylor
+  </td>
+  <td >Sales
+  </td>
+  <td >2500
+  </td>
+  <td >Oxford
+  </td>
+ </tr>
+</table>
+<br/><br/>
+<p>4. Affichez le nom et le
+service de tous les employés dont le nom comporte un ‘a’.</p>
+
+<table ><tr><th>>LAST_NAME
+  </th>
+  <th>
+  DEPARTMENT_NAME
+  </th>
+ </tr>
+ <tr><td>Kochhar
+  </td>
+  <td >Executive
+  </td>
+ </tr>
+ <tr><td>..
+  </td>
+  <td >..
+  </td>
+ </tr>
+ <tr >
+  <td >Fay
+  </td>
+  <td >Marketing
+  </td>
+ </tr>
+</table>
+<br/><br/>
+<p>5. Écrivez une instruction
+permettant d'afficher le nom, le poste, le numéro de service et le nom de
+service de tous les employés travaillant à Toronto.</p>
+
+
+<table>
+ <tr><th>LAST_NAME
+  </th>
+  <th>JOB_ID
+  </th>
+  <th>DEPARTMENT_ID
+  </th>
+  <th>DEPARTMENT_NAME
+  </th>
+ </tr>
+ <tr >
+  <td>Fay
+  </td>
+  <td >MK_REP
+  </td>
+  <td>20
+  </td>
+  <td >Marketing
+  </td>
+ </tr>
+ <tr>
+ <td>Hartstein</td>
+  <td>MK_MAN
+  </td>
+  <td>20
+  </td>
+  <td >Marketing
+  </td>
+ </tr>
+</table>
+<br/><br/>
+<p>6. Affichez le nom et le numéro
+de chaque employé ainsi que le nom et le numéro de son manager.<br/>Nommez les
+colonnes Employé, Emp#, Manager et Mgr#,
+respectivement.
+
+<table ><tr><th>Employé
+  </th>
+  <th>Emp</th>
+  <th>Manager</th>
+  <th>Mgr#
+  </th>
+ </tr>
+ <tr><td>Kochhar
+  </td>
+  <td >101
+  </td>
+  <td >King
+  </td>
+  <td>100
+  </td>
+ </tr>
+ <tr><td>Hartstein
+  </td>
+  <td >201
+  </td>
+  <td >King
+  </td>
+  <td>100
+  </td>
+ </tr>
+ <tr><td>...
+  </td>
+  <td >...
+  </td>
+  <td >...
+  </td>
+  <td>...
+  </td>
+ </tr>
+ <tr><td>Fay
+  </td>
+  <td >202
+  </td>
+  <td >Hartstein
+  </td>
+  <td>201
+  </td>
+ </tr>
+ <tr><td>Gietz
+  </td>
+  <td>206
+  </td>
+  <td>Higgins
+  </td>
+  <td >205
+  </td>
+ </tr>
+</table>
+
+<p>7. Affichez tous les employés,
+y compris ceux qui n'ont pas de manager. Triez les résultats par numéro d'employé.</p>
+<br/><br/>
+<table><tr><th>Employé
+  </th>
+  <th>Emp</th>
+  <th>Manager
+  </th>
+  <th>Mgr#
+  </th>
+ </tr>
+ <tr><td>King
+  </td>
+  <td>100
+  </td>
+  <td>&nbsp;
+  </td>
+  <td>&nbsp;
+  </td>
+ </tr>
+ <tr><td>Kochhar
+  </td>
+  <td>101
+  </td>
+  <td>King
+  </td>
+  <td>100
+  </td>
+ </tr>
+ <tr><td>...
+  </td>
+  <td>...
+  </td>
+  <td>...
+  </td>
+  <td>...
+  </td>
+ </tr>
+ 
+</table>
+<br/><br/>
+<p>8. Créez une instruction SQL permettant
+d'afficher le nom de chaque employé, son numéro de service et le nom de tous
+les employés qui travaillent dans le même service.<br/>Donnez à chaque colonne un
+intitulé approprié.</p>
+
+<p>9. Créez une instruction permettant d'afficher le nom, le poste,
+le service, le salaire et l’échelon de tous les employés.</p>
+
+<p>10. Créez une instruction
+permettant d'afficher le nom et la date d'embauche de tous les employés
+recrutés après l’employé Davies</p>
+
+<p>11. Affichez le nom et la date
+d'embauche de tous les employés recrutés avant leur manager, ainsi que le nom
+et la date d'embauche de leur manager.<br/>
+Nommez les colonnes Employé, Emp Embauche, Manager et Mgr Embauche, respectivement.</p>
+
+</body>
+
+</html>

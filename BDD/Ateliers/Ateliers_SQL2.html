@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset='UTF-8'>
+<link rel='stylesheet' href='sql.css' />
+<title>Atelier 2 – Champs Calculés</title>
+</head>
+
+<body >
+
+<h1>Atelier 2 – Champs Calculés</h1>
+
+
+
+<p>1. Créez une requête qui se
+contente d’afficher la date du jour.</p>
+<table><tr><th>Date du Jour</th></tr><tr><td>02/10/2003</td></tr></table>
+<br/><br/>
+<p>2. Affichez pour chaque employé
+le numéro, le nom, le salaire et le salaire augmenté de 15%. Nommez la nouvelle
+colonne ‘Nouveau Salaire’.</p>
+
+<table><tr><th>LAST_NAME</th>
+			<th>SALARY</th>
+			<th>Nouveau Salaire</th>
+		</tr>
+ <tr>
+  <td>King
+  </td>
+  <td>24 000.00</td>
+  <td>27 600.00</td>
+ </tr>
+ <tr>
+  <td>Kochhar
+  </td>
+  <td>17 000.00</td>
+  <td>19 550.00</td>
+ </tr>
+ <tr>
+  <td>...</td>
+  <td>...</td>
+  <td>...</td>
+ </tr>
+ <tr>
+  <td>Gietz</td>
+  <td>8 300.00</td>
+  <td>9 545.00</td>
+ </tr>
+</table>
+<br/><br/>
+<p>3. Modifiez la requête
+précédente pour ajouter une colonne permettant de soustraire l’ancien salaire
+du nouveau. Nommez la nouvelle colonne ‘Augmentation’.</p>
+
+<table><tr><th>LAST_NAME</th>
+			<th>SALARY</th>
+			<th>Nouveau Salaire</th>
+			<th>Augmentation</th>
+		</tr>
+ <tr>
+  <td>King
+  </td>
+  <td>24 000.00</td>
+  <td>27 600.00</td>
+  <td>3 600.00</td>
+ </tr>
+ <tr>
+  <td>Kochhar
+  </td>
+  <td>17 000.00</td>
+  <td>19 550.00</td>
+  <td>2 550.00</td>
+ </tr>
+ <tr>
+  <td>...</td>
+  <td>...</td>
+  <td>...</td>
+ </tr>
+ <tr>
+  <td>Gietz</td>
+  <td>8 300.00</td>
+  <td>9 545.00</td>
+  <td>1 245.00</td>
+ </tr>
+</table>
+<br/><br/>
+
+<p>4. Affichez le nom de chaque
+employé et calculez le nombre de mois écoulés entre la date du jour et la date
+d’embauche. Nommez la colonne ‘Mois Travaillés’. Classez le résultat en
+fonction du nombre de mois d’ancienneté. Arrondissez le nombre de mois à l’entier
+le plus proche.</p>
+
+<table>
+ <tr>
+  <th>LAST_NAME
+  </th>
+  <th>Mois Travaillés</th>
+ </tr>
+ <tr><td>Zlotkey</td>
+  <td>46</td>
+ </tr>
+ <tr><td>De Haan</td>
+  <td>130</td>
+ </tr>
+ <tr><td>...</td>
+ <td>...</td>
+ </tr>
+ <tr><td>King
+  </td>
+  <td>197
+  </td>
+ </tr>
+</table>
+
+<br/><br/>
+
+<p>5. Ecrivez une requête
+affichant dans une seule colonne l’information suivante&nbsp;<span class=GramE>:</span><br>
+&lt;Nom de l’employé&gt; gagne &lt;Salaire&gt; par mois mais souhaiterait
+&lt;salaire multiplié par 3&gt;. Nommez la colonne ‘Salaire de rêve’</p>
+
+<table><tr><th>Salaire de rêve</th></tr>
+ <tr><td>King gagne 24000 par mois mais souhaiterait 72000</td></tr>
+ <tr><td>Kochhar gagne 17000 par mois mais souhaiterait 51000</td></tr>
+  <tr><td>....</td></tr>
+ <tr><td>Gietz gagne 8300 par mois mais souhaiterait 24900</td></tr>
+</table>
+
+<br/><br/>
+<p>6. Créez une requête permettant
+d’afficher le nom et le salaire de tous les employés. Le salaire devra
+comporter 15 caractères et les caractères de remplissage seront insérés à
+gauche sous forme de signes ‘$’. Nommez la colonne Salaire.
+</p>
+
+<div align=center>
+
+<table><tr><th>Nom</th><th>Salaire</th></tr>
+ <tr><td>King</td>
+  <td>$$$$$$$$$$24000</td>
+ </tr>
+ <tr><td>Kochhar</td>
+  <td>$$$$$$$$$$17000
+  </td>
+ </tr>
+ <tr><td>...
+  </td>
+  <td>...
+  </td>
+ </tr>
+ <tr><td>Gietz</td>
+  <td>$$$$$$$$$$$8300</td>
+ </tr>
+</table>
+
+<br/><br/>
+
+<p>7. Affichez le nom et la date
+d’embauche de chaque employé ainsi que la date de révision du salaire, qui
+correspond au premier lundi après 6 mois d’activité. Nommez la colonne
+‘Révision’. Les dates devront apparaître au format ‘Mardi, le 30 Septembre 2003’</p>
+
+<table><tr><th>LAST_NAME</th>
+  <th>HIRE_DATE
+  </th>
+  <th>Révision
+  </th>
+ </tr>
+ <tr>
+  <td>King
+  </td>
+  <td>17/06/1987
+  </td>
+  <td>lundi
+  21 décembre 1987</td>
+ </tr>
+ <tr>
+  <td>Kochhar</td>
+  <td>21/09/1989</td>
+  <td>lundi 26 mars 1990</td></tr>
+ <tr>
+  <td>...
+  </td>
+  <td>...
+  </td>
+  <td>...</td>
+ </tr>
+ <tr>
+  <td>Gietz</td>
+  <td>07/06/1994</td>
+  <td>lundi 12 décembre 1994</td>
+ </tr>
+</table>
+
+<br/><br/>
+
+<p>8. Affichez le nom de
+l'employé, sa date d'embauche ainsi que le jour de début d'activité.<br/>Nommez la
+colonne ‘Jour’. Classez les résultats dans l'ordre des jours de la semaine à
+partir du lundi.</p>
+
+<table><tr><th>LAST_NAME</th>
+  <th>HIRE_DATE</th>
+  <th>Jour</th>
+ </tr>
+ <tr><td>Grant</td>
+  <td>24/05/1999</td>
+  <td>lundi</td>
+ </tr>
+ <tr><td>...</td>
+  <td>...</td>
+  <td>...</td>
+ </tr>
+ <tr><td>Matos</td>
+  <td>15/03/1998</td>
+  <td>dimanche</td>
+ </tr>
+</table>
+<br/><br/>
+<p>9. Créez une instruction SQL permettant
+d'afficher le nom et le montant de la commission de chaque employé.<br/>Pour les
+employés ne touchant aucune commission, affichez &quot;Pas de Commission&quot;.
+Nommez la colonne COMM.</p>
+
+<p>10. Créez une instruction
+permettant d'afficher le nom des employés et leur salaire annuel sous forme
+d'astérisques. Chaque astérisque représente mille dollars.<br/>Triez les données
+dans l'ordre décroissant des salaires.<br/>Nommez la colonne EMPLOYEE_AND_THEIR
+SALARIES.</p>
+</body>
+
+</html>

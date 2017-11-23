@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<meta charset='UTF-8'>
+<link rel='stylesheet' href='sql.css' />
+
+<title>Atelier 6 – Exercices supplémentaires</title>
+
+</head>
+
+<body >
+<h1>Atelier 6 – Exercices supplémentaires</h1>
+<hr>
+
+<p>1. Affichez toutes les données
+relatives aux employés qui ont été embauchés après 1997.</p>
+
+<p>2. Affichez le nom, le poste,
+le salaire et la commission des employés qui touchent des commissions. Triez
+les données dans l'ordre décroissant du salaire.</p>
+<table>
+<tr><th>LAST_NAME</th><th>JOB_ID</th><th>SALARY</th><th>COMMISSION_PCT</th></tr>
+<tr><td>Russell</td><td>SA_MAN</td><td>14000</td><td>0,4</td></tr>
+<tr><td>Partners</td><td>SA_MAN</td><td>13500</td><td>0,3</td></tr>
+<tr><td>Errazuriz</td><td>SA_MAN</td><td>12000</td><td>0,3</td></tr>
+<tr><td>Ozer</td><td>SA_REP</td><td>11500</td><td>0,25</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>Johnson</td><td>SA_REP</td><td>6200</td><td>0,1</td></tr>
+<tr><td>Kumar</td><td>SA_REP</td><td>6100</td><td>0,1</td></tr>
+</table><br/><br/>
+<p>3. Affichez les employés qui ne
+touchent pas de commission, mais qui bénéficient d'une augmentation de salaire
+de 10 % (arrondissez le montant des salaires).</p>
+<table>
+<tr><th>Nouveau Salaire</th></tr>
+<tr><td>Le salaire de King avec 10% d'augmentation est 26400</td></tr>
+<tr><td>Le salaire de Kochhar avec 10% d'augmentation est 18700</td></tr>
+<tr><td>...</td></tr>
+<tr><td>Le salaire de Gietz avec 10% d'augmentation est 9130</td></tr>
+</table><br/><br/>
+<p>4. Affichez le nom ainsi que le
+nombre d'années et de mois complets d'ancienneté de tous les employés.</p>
+<table>
+<tr><th>LAST_NAME</th><th>ANNEES</th><th>MOIS</th><th>TOTAL MOIS</th></tr>
+<tr><td>King</td><td>25</td><td>11</td><td>311</td></tr>
+<tr><td>Kochhar</td><td>23</td><td>8</td><td>284</td></tr>
+<tr><td>DE Haan</td><td>20</td><td>4</td><td>244</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>Higgins</td><td>18</td><td>11</td><td>227</td></tr>
+<tr><td>Gietz</td><td>18</td><td>11</td><td>227</td></tr>
+</table><br/><br/>
+
+<p>5. Affichez tous les noms
+d'employé commençant par la lettre J, K, L ou M.</p>
+<table>
+<tr><th>LAST_NAME</th></tr>
+<tr><td>Johnson</td></tr>
+<tr><td>Jones</td></tr>
+<tr><td>...</td></tr>
+<tr><td>Mourgos</td></tr>
+</table><br/><br/>
+<p>6. Affichez tous les employés
+et indiquez par &quot;Yes&quot; ou &quot;No&quot; s'ils reçoivent ou non une
+commission.</p>
+<table>
+<tr><th>LAST_NAME</th><th>SALARY</th><th>Commission</th></tr>
+<tr><td>King</td><td>24000</td><td>No</td></tr>
+<tr><td>Kochhar</td><td>17000</td><td>No</td></tr>
+<tr><td>De Haan</td><td>17000</td><td>No</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>higgins</td><td>12000</td><td>No</td></tr>
+<tr><td>Gietz</td><td>8300</td><td>No</td></tr>
+</table><br/><br/>
+
+<p>7. Affichez le nom du service,
+l’ID de lieu, le nom, le poste et le salaire de tous les employés qui
+travaillent sur le site 1800.</p>
+<table>
+<tr><th>DEPARTMENT_NAME</th><th>LOCATION_ID</th><th>LAST_NAME</th><th>JOB_ID</th><th>SALARY</th></tr>
+<tr><td>Marketing</td><td>1800</td><td>Hartstein</td><td>MK_MAN</td><td>13000</td></tr>
+<tr><td>Marketing</td><td>1800</td><td>Fay</td><td>MK_REP</td><td>6000</td></tr>
+</table><br/><br/>
+<p>8. Déterminez combien
+d'employés portent un nom se terminant par la lettre &quot;n&quot;.</p>
+
+<p>9. Affichez le nom et
+l'emplacement de tous les services, ainsi que le nombres d'employés par
+service.<br/>Assurez-vous que les services qui ne comportent pas d'employés sont
+également inclus.</p>
+
+<p>10. Quels postes appartiennent
+aux services 10 et 20 ?</p>
+
+<p>11. Quels postes appartiennent
+aux services Administration et Executive et combien d'employés représentent-ils
+?<br/>Affichez en tête le poste occupé par le plus grand nombre d'employés.</p>
+
+<p>12. Affichez tous les employés
+qui ont été recrutés dans les quinze premiers jours du mois (avant le 16).</p>
+
+<p>13. Affichez le nom et le
+salaire de tous les employés, ainsi que la somme qu'ils touchent en milliers de
+dollars.</p>
+
+<p>14. Affichez tous les employés
+dont le manager perçoit un salaire supérieur à 15 000 $.<br/>Affichez les
+informations suivantes: nom de l'employé et nom, salaire et niveau de salaire
+du manager.</p>
+
+<p>15. Affichez le numéro, le nom,
+le nombre d'employés et le salaire moyen de tous les services, en indiquant le
+nom, le salaire et le poste des employés de chaque service.</p>
+<table>
+<tr><th>DEPARTMENT_ID</th><th>DEPARTEMENT_NAME</th><th>NB Employés</th><th>Salaire Moyen</th><th>LAST_NAME</th><th>SALARY</th><th>JOB_ID</th></tr>
+<tr><td>10</td><td>Administration</td><td>1</td><td>4400.00</td><td>Whalen</td><td>4400</td><td>ASST</td></tr>
+<tr><td>20</td><td>Marketing</td><td>2</td><td>9500.00</td><td>Fay</td><td>6000</td><td>MK_REP</td></tr>
+<tr><td>20</td><td>Marketing</td><td>2</td><td>9500.00</td><td>Hartstein</td><td>13000</td><td>MK_MAN</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>260</td><td>Recruiting</td><td>0</td><td>Aucun salaire</td><td>(null)</td><td>(null)</td><td>(null)</td></tr>
+<tr><td>270</td><td>Payroll</td><td>0</td><td>Aucun salaire</td><td>(null)</td><td>(null)</td><td>(null)</td></tr>
+</table><br/><br/>
+<p>16. Affichez le numéro de
+service, ainsi que le salaire le plus bas du service dans lequel le salaire
+moyen est le plus élevé.</p>
+
+<p>17. Affichez le nom, le numéro
+et l'emplacement des services qui ne comportent aucun représentant.</p>
+
+<p>18. Affichez le numéro, le nom
+et le nombre d'employés de chaque service qui compte moins de 3 employés</p>
+
+<p>19. Affichez le numéro
+d'employé, le nom, le salaire, le numéro de service et le salaire moyen du
+service de tous les employés.</p>
+
+<p>20. Affichez tous les employés
+qui ont été recrutés le jour de la semaine qui présente le plus grand nombre
+d'embauches.</p>
+
+<p>21. Affichez le nom, le salaire 
+et le nom du service de tous les employés dont le salaire est égal au salaire max 
+de son service rangé par salaire décroissant.</p>
+
+<p>22. Lister les employés qui ont déjà 
+changé au moins 2 fois de poste.</p>
+
+<p>23. Lister les employés qui ont déjà 
+travaillé 2 fois sur un même type de poste.</p>
+
+<p>24. Lister les employés qui ont déjà 
+changé de poste et qui sont toujours resté dans le même service.</p>
+
+<p>25. Lister les employés qui occupent 
+un poste de représentant ou qui l'ont occupé.</p>
+
+</body>
+
+</html>

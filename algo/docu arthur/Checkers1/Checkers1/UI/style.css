@@ -1,0 +1,94 @@
+#content {
+     width: 75%;
+     height: 100%;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+#boardContainer {
+     width: 50%;
+     float: left;
+}
+
+#board {
+     color: white;
+     float: right;
+}
+
+#controlsContainer {
+     width: 50%;
+     float: left;
+}
+
+#controls {
+     width: 90%;
+
+     margin-left: auto;
+     margin-right: auto;
+
+     color: white;
+     background-color: rgba(125, 125, 125, 0.8);
+     padding-left: 20px;
+     padding-top: 5px;
+     padding-bottom: 20px;
+}
+
+#log {
+     width: 90%;
+     min-height: 50px;
+
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 20px;
+     padding-left: 20px;
+     padding-top: 5px;
+
+     background-color: rgba(125, 125, 125, 0.8);
+
+     color: white;
+     text-align: center;
+     font-weight: bold;
+}
+
+.error {
+     color: red;
+}
+
+h1 {
+     text-align: center;
+}
+
+.line {
+     clear:both;
+}
+
+.box {
+     float:left;
+     width: 50px;
+     height: 50px;
+     border: 1px solid black;
+     text-align: center;
+     line-height: 50px;
+     font-size: 25px;
+     font-weight: bold;
+}
+
+.black {
+     background-color: black;
+}
+
+.white {
+     background-color: white;
+}
+
+.t1 {
+     content:url("red.gif");
+}
+
+.t2 {
+     content:url("yel.png");
+}
+
+.selected {
+     background-color: green;
+}

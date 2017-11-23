@@ -1,0 +1,78 @@
+<DOCTYPE HTML>
+<html>
+<head>
+<meta charset='UTF-8'>
+<link rel='stylesheet' href='sql.css' />
+<title>Atelier 4 – Opérations et Regroupements</title>
+</head>
+
+<body>
+
+<h1>Atelier 4 – Opérations et Regroupements</h1>
+
+
+<p>1. Affichez le salaire maximum,
+le salaire minimum, la somme des salaires et le salaire moyen de tous les
+employés. Nommez les colonnes Maxi, Mini, Somme et Moyenne respectivement.
+Arrondissez les résultats au nombre entier le plus proche.</p>
+
+<p>2. Modifiez l'instruction
+précédente pour afficher le salaire maximum, le salaire minimum, la somme des
+salaires et le salaire moyen de chaque poste.</p>
+
+<p>3. Ecrivez une instruction pour
+afficher le nombre d'employés qui occupent le même poste.</p>
+
+<p>4. Déterminez le nombre de
+managers, sans en afficher la liste. Nommez la colonne ‘Nb Managers’. Indice: utiliser la colonne MANAGER_ID.</p>
+
+<p>5. Ecrivez une instruction qui
+affiche la différence entre le salaire maximum et le salaire minimum. Nommez la
+colonne ‘Différence’.</p>
+
+<p>6. Affichez le numéro du
+manager et le salaire du subordonné le moins bien payé de chaque manager.
+Excluez tout employé dont le manager n'est pas connu. Excluez tout groupe dans
+lequel le salaire minimum est inférieur ou égal à 6 000. Triez le résultat dans
+l'ordre décroissant des salaires.</p>
+
+<p>7. Ecrivez une instruction qui
+affiche le nom, le lieu, le nombre d'employés et le salaire moyen de chaque
+service. Nommez les colonnes ‘Nom’, ‘Lieu’, ‘NB personnes’ et ‘Salaire moyen’
+respectivement. Arrondissez le salaire moyen à deux chiffres après la virgule.</p>
+
+<table><tr><th>Nom</th>
+  <th>Lieu</th>
+  <th>NB Personnes</th>
+  <th>Salaire moyen</th></tr>
+<tr><td>IT</td><td>Southlake</td><td>5</td><td>5760.00</td></tr>
+<tr><td>Public Relations</td><td>Munich</td><td>1</td><td>10000.00</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+</table><br/><br/>
+
+
+<p>8. Créez une instruction qui
+affiche le nombre total d'employés puis qui recense, parmi ces employés, ceux
+qui ont été embauchés en 1995, 1996, 1997 et 1998. Nommez les colonnes de façon
+appropriée.</p>
+<table >
+<tr><th>NB TOTAL de salariés</th><th>1995</th><th>1996</th><th>1997</th><th>1998</th></tr>
+<tr><td>107</td><td>4</td><td>10</td><td>28</td><td>23</td></tr>
+</table><br/><br/>
+
+<p>9. Créez une instruction qui
+affiche chaque poste, la somme des salaires par poste dans chacun des services 20, 50, 80
+et 90, ainsi que le salaire total par poste. Nommez les colonnes de façon
+appropriée.</p>
+<table >
+<tr><th>Emploi</th><th>srvc 20</th><th>Srvc 50</th><th>Srvc 80</th><th>Srvc 90</th><th>Total</th></tr>
+<tr><td>IT PROG</td><td>0</td><td>0</td><td>0</td><td>0</td><td>28800</td></tr>
+<tr><td>AC_MGR</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12000</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>ST_MAN</td><td>0</td><td>36400</td><td>0</td><td>0</td><td>36400</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+</table><br>
+
+</body>
+
+</html>

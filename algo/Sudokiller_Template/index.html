@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8" />
+          <title>Sudokiller</title>
+          <link rel="stylesheet" href="styles/style.css" />
+          <script type="text/javascript" src="scripts/model.js"></script>
+          <script type="text/javascript" src="scripts/main.js"></script>
+     </head>
+     <body onload="main();">
+         <header>
+             <h1>Sudokiller</h1>
+         </header>
+         <section id="BoardSection">
+                <aside>
+                    <div id="Controls">
+                         <h3>Controls</h3>
+                         <label>Select grid</label>
+                         <br/><br/>
+                         <button type="button" onclick="selectGrid(0)">Easy</button>
+                         <button type="button" onclick="selectGrid(1)">Medium</button>
+                         <button type="button" onclick="selectGrid(2)">Hard</button>
+                         <button type="button" onclick="selectGrid(3)">Very Hard</button>
+                         <br/><br/><br/>
+                         <button type="button" id="SolveButton" onclick="solveGrid()">Solve</button>
+                         <br/><br/>
+                         <h3>Stats</h3>
+                         <label>Moves</label><br/>
+                         <input type="text" id="moves" disabled value="/"/>
+                         <br/><br/>
+                         <label>Time</label><br/>
+                         <input type="text" id="time" disabled value="/"/>
+                    </div>
+                </aside>
+                <article>
+                        <div id="Board">
+                                <div class="ClusterLine">
+                                        <div class="Cluster">
+                                            <div class="Line">
+                                                <div class="Box empty"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="Cluster">
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="Cluster">
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="ClusterLine">
+                                        <div class="Cluster">
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="Cluster">
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="Cluster">
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="ClusterLine">
+                                        <div class="Cluster">
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="Cluster">
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="Cluster">
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                            <div class="Line">
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                                <div class="Box"><p>0</p></div>
+                                            </div>
+                                        </div>
+                                </div>
+                          </div>
+                </article>
+         </section>
+          
+     </body>
+
+</html>

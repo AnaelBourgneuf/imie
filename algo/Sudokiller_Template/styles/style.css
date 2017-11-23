@@ -1,0 +1,88 @@
+#BoardSection {
+    display: flex;
+    justify-content: center;
+}
+
+#Board {
+    border: 0.2vw solid black;
+    
+    width: 30vw;
+    height: 30vw;
+
+    /* margin: auto; */
+
+    display: flex;
+    flex-direction: column;
+}
+
+.ClusterLine {
+    display: flex;
+    flex: 1;
+}
+
+.Cluster {
+    border: 0.1vw solid rgba(0, 0, 0, 0.658);
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.Line {   
+    display: flex;
+    flex: 1;
+}
+
+.Box {
+    border: 0.05vw solid darkgray;
+    flex: 1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Box p{
+    font-size: 1.5vw; 
+}
+
+.empty {
+    background-color: lightgray;
+}
+
+#Controls {
+    background-color: #706b64;
+    box-shadow: 0px 2px 5px #1c1a19;
+    border: 0.05vw solid black;
+    border-radius: 0.05vw;
+
+    color: white;
+
+    margin-right: 1.5vw;
+    margin-top: 0.5vw;
+    width: 15vw;
+    height: 28vw;
+    padding: 0.5vw;
+    padding-top: 0px; 
+
+    text-align: center;
+}
+
+#Controls h3 {
+    font-size: 1.5vw; 
+}
+
+#Controls input {
+    text-align: center;
+}
+
+header h1 {
+    text-align: center;
+    background-color: #706b64;
+    color: white;
+
+    height: 3.5vw;
+    line-height: 3.5vw;
+    font-size: 3vw; 
+    vertical-align: middle;
+}
+

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<meta charset='UTF-8'>
+<link rel='stylesheet' href='sql.css' />
+<title>Atelier 5 – Requêtes Imbriquées</title>
+</head>
+
+<body>
+
+<h1>Atelier 5 – Requêtes Imbriquées</h1>
+<hr>
+
+<p>1. Ecrivez une interrogation en
+vue d'afficher le nom et la date d'embauche des employés appartenant au même
+service que Zlotkey. Excluez Zlotkey</p>
+<table>
+<tr><th>LAST_NAME</th><th>HIRE_DATE</th></tr>
+<tr><td>Russell</td><td>	01/10/96</td></tr>
+<tr><td>Partners</td><td>	05/01/97</td></tr>
+<tr><td>...</td><td>...</td></td>
+<tr><td>Livingston</td><td>	23/04/98</td></tr>
+<tr><td>Johnson</td><td>	04/01/00</td></tr>
+</table><br/><br/>
+
+<p>2. Créez une interrogation en
+vue d'afficher le numéro et le nom de tous les employés qui touchent un salaire
+supérieur au salaire moyen. Triez les résultats dans l'ordre croissant des
+salaires.</p>
+<table>
+<tr><th>EMPLOYEE_ID</th><th>LAST_NAME</th></tr>
+<tr><td>123</td><td>Vollman</td></tr>
+<tr><td>203</td><td>Mavris</td></tr>
+<tr><td>165</td><td>Lee</td></tr>
+<tr><td>...</td><td>...</td></td>
+<tr><td>101</td><td>Kochhar</td></tr>
+<tr><td>100</td><td>King</td></tr>
+</table><br/>
+<p>3. Ecrivez une instruction en
+vue d'afficher le numéro et le nom de tous les employés qui travaillent dans le
+même service qu'un employé dont le nom contient la lettre u.</p>
+<table>
+<tr><th>EMPLOYEE_ID</th><th>LAST_NAME</th></tr>
+<tr><td>107</td><td>Lorentz</td></tr>
+<tr><td>106</td><td>Pataballa</td></tr>
+<tr><td>105</td><td>Austin</td></tr>
+<tr><td>...</td><td>...</td></td>
+<tr><td>146</td><td>Partners</td></tr>
+<tr><td>145</td><td>Russell</td></tr>
+</table><br/><br/>
+<p>4. Affichez le nom, le numéro
+de service et l'ID de poste de tous les employés dont l'ID de lieu du service
+est 1700.</p>
+<table>
+<tr><th>LAST_NAME</th><th>DEPARTMENT_ID</th><th>JOB_ID</th></tr>
+<tr><td>King</td><td>90</td><td>AD_PRES</td></tr>
+<tr><td>Kochhar</td><td>90</td><td>AD_VP</td></tr>
+<tr><td>De Haan</td><td>90</td><td>AD_VP</td></tr>
+<tr><td>Greenberg</td><td>100</td><td>FI_MGR</td></tr>
+<tr><td>...</td><td>...</td><td>...</td></tr>
+<tr><td>higgins</td><td>110</td><td>AC_MGR</td></tr>
+<tr><td>Gietz</td><td>110</td><td>AC_ACCOUNT</td></tr>
+</table><br/><br/>
+<p>5. Affichez le nom et le
+salaire de tous les employés qui dépendent de King.</p>
+<table>
+<tr><th>LAST_NAME</th><th>SALARY</th></tr>
+<tr><td>kochhar</td><td>17000</td></tr>
+<tr><td>De Haan</td><td>17000</td></tr>
+<tr><td>Raphaely</td><td>11000</td></tr>
+<tr><td>...</td><td>...</td></td>
+<tr><td>Zlotkey</td><td>10500</td></tr>
+<tr><td>Hartstein</td><td>13000</td></tr>
+</table><br/><br/>
+<p>6. Affichez le numéro de
+service, le nom et l'ID de poste de tous les employés du service Executive</p>
+<table>
+<tr><th>DEPARTMENT_ID</th><th>LAST_NAME</th><th>JOB_ID</th></tr>
+<tr><td>90</td><td>King</td><td>AD_PRES</td></tr>
+<tr><td>90</td><td>Kochhar</td><td>AD_VP</td></tr>
+<tr><td>90</td><td>De Haan</td><td>AD_VP</td></tr>
+</table><br/><br/>
+
+<p>7. Affichez le numéro, le nom
+et le salaire de tous les employés dont le salaire est supérieur au salaire
+moyen et qui travaillent dans le même service qu'un employé dont le nom
+contient la lettre u.</p>
+<table>
+<tr><th>EMPLOYEE_ID</th><th>LAST_NAME</th><th>SALARY</th></tr>
+<tr><td>103</td><td>Hunold</td><td>9000</td></tr>
+<tr><td>113</td><td>Popp</td><td>6900</td></tr>
+<tr><td>112</td><td>Urman</td><td>7800</td></tr>
+<tr><td>...</td><td>...</td>....</td>
+<tr><td>146</td><td>Partners</td><td>13500</td></tr>
+<tr><td>145</td><td>Russel</td><td>14000</td></tr>
+</table><br/><br/>
+
+</body>
+
+</html>
