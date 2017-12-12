@@ -1,0 +1,46 @@
+Exercice 1
+Les habitants de Paris paient l’impôt selon les règles suivantes :
+-les hommes de plus de 20 ans paient l’impôt
+-les femmes paient l’impôt si elles ont entre 18 et 35 ans
+-les autres ne paient pas d’impôt
+
+Le programme demandera donc l’âge et le sexe du Parisien, et se prononcera donc ensuite sur le fait que l’habitant est imposable.
+
+Exercice 2
+Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu’à ce nombre. 
+Par exemple, si l’on entre 5, le programme doit calculer:1+2+3+4+5=15
+
+
+Exercice 3
+Soit un tableau de N réels. Ecrire un algorithme qui permet de calculer le nombre des occurrences d’un nombre X (c'est-à-dire combien de fois ce nombre X figure dans le tableau).
+
+Exercice 4
+
+Ecrire un algorithme qui gère l’attaque dans un jeu
+ -Un personnage dans le jeu possède les attributs suivant : 
+-- des points de vie, une armure, une valeur d’attaque, des points d’action 
+il existe 5 armes avec des valeurs d’attaque différentes : 
+--concasseur : 3 
+--pelle : 2
+ 	--gatling : 10 
+--batte de cricket : 1
+ --blaster : 6
+- Il existe 3 types d’armure : 
+-- Gilet bleu : 1 
+-- Armure de cuir : 2 
+-- Armure de plaque : 4  
+
+Lors d’une attaque entre deux personnages on soustrait les dégâts d’attaque à la valeur d’armure du défenseur 
+Les points d’action permettent à un personnage de lancer des attaques
+Suivant les différentes armes il faut plus ou moins de point d’action pour réaliser une attaque : 
+-concasseur : 4 
+-pelle : 1
+ -gatling : 6
+-batte de cricket : 1
+-blaster : 3
+
+S’équiper d’une arme coute 1 point d’action 
+A chaque début de tour aucune arme n’est équipée pour chacun des personnages 
+Un personnage fini son tour lorsqu’il ne peut plus effectuer d’action 
+Un personnage mort n’attaque pas 
+Afficher le déroulé du combat entre 2 personnages jusqu’à la mort de l’un d’eux.
