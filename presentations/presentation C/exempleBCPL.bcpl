@@ -1,0 +1,14 @@
+MANIFEST ${ TOPFACT = 10 $} // Equivalent of "const int TOPFACT = 10"
+LET infact (n) = VALOF
+$(
+  LET f, j = 1., 0.
+
+  FOR i = 0 TO n             // Declares i for the next block only
+  $(
+    f #*:= j;                // := is assign, = is compare
+    fact!i := f;             // assignment doesn't return a value
+    j #+:= 1.
+  $)
+  RESULTIS f
+$)
+AND fact = VEC TOPFACT;      // As in B, allocates 0 to TOPFACT

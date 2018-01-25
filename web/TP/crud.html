@@ -1,0 +1,443 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD USERS</title>
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --green: rgba(39, 174, 96, 1.0);
+            --red: rgba(231, 76, 60, 1.0);
+            --yellow: rgba(241, 196, 15, 1.0);
+            --blue: rgba(52, 152, 219, 1.0);
+            --blue-grey: rgba(52, 73, 94, 1.0);
+            --grey: rgba(195, 195, 195, .5);
+            --teal: rgba(22, 160, 133, 1.0);
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        button {
+            display: flex;
+            border: none;
+            justify-content: center;
+            align-items: center;
+            padding: 0 16px;
+            background: var(--blue-grey);
+            border-radius: 4px;
+            text-transform: uppercase;
+            height: 32px;
+            line-height: 32px;
+            cursor: pointer;
+            color: white;
+            margin: 4px;
+            outline: none;
+        }
+        button:hover {
+            opacity: 0.85
+        }
+        button:focus {
+            box-shadow: 1px 1px 12px var(--blue-grey);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        #list,
+        #form {
+            width: 50%;
+        }
+
+        .form__row {
+            display: flex;
+            align-items: center;
+            margin: 8px 16px;
+        }
+        .form__row input {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid var(--grey);
+            outline: none;
+            flex: 1 1 auto;
+        }
+        .form__row input:focus {
+            border-color: var(--blue-grey)
+        }
+        .form__row label {
+            display: flex;
+            align-items: center;
+            margin-right: 8px;
+        }
+        .form__submit {
+            background: var(--green);
+            align-self: flex-end;
+        }
+
+        #list {
+            border-top: 1px solid var(--grey);
+        }
+        .user {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--grey);
+            padding: 4px 8px;
+        }
+        .user:nth-of-type(even) {
+            background: rgba(195, 195, 195, .2)
+        }
+
+        .user__edit,
+        .user__delete {
+            padding: 4px;
+            border-radius: 50%;
+        }
+        .user__edit {
+            background: var(--yellow);
+        }
+        .user__delete {
+            background: var(--red);
+        }
+        .user__action-container {
+            display: flex;
+        }
+
+        #notifContainer {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+        }
+
+        .error {
+            color: white;
+            background-color: red;
+            border : 1px solid darkred;
+            border-radius: 5px;
+            padding: 3px;
+            margin: 1px;
+            font-size: 1em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .success {
+            color: white;
+            background-color: forestgreen;
+            border: 1px solid darkgreen;
+            border-radius: 5px;
+            padding: 3px;
+            margin: 1px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .error__delete {
+            float: right;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid black;
+            padding: 1px;
+            background: var(--red);
+        }
+
+        .success__delete {
+            float: right;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid black;
+            padding: 1px;
+            background: var(--green);
+        }
+    </style>
+</head>
+<body>
+<button id="fetch">Fetch users</button>
+<div class="flex">
+    <ul id="list"></ul>
+    <form id="form">
+        <!-- name -->
+        <div class="form__row">
+            <label for="form__name"><i class="material-icons">face</i> Name:</label>
+            <input id="form__name" type="text" name="name" placeholder="Name">
+        </div>
+        <!-- email -->
+        <div class="form__row">
+            <label for="form__email"><i class="material-icons">mail</i> Email:</label>
+            <input id="form__email" type="email" name="email" placeholder="Email">
+        </div>
+        <!-- submit -->
+        <div class="form__row">
+            <button class="form__submit"><i class="material-icons">check</i>Submit</button>
+        </div>
+    </form>
+</div>
+<div id="notifContainer"></div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  /**
+   * @disclaimer
+   * The purpose of this example is to be as simple as possible
+   * This code is not optimized and may produce unhandled errors
+   */
+
+  // API endpoint for users management
+  const usersEndpoint = 'http://localhost:3000/users'
+
+  // Button used to fetch users from api
+  const fetchBtn = document.getElementById('fetch')
+
+  // List used to render user entries
+  const list = document.getElementById('list')
+
+  // Form used to create or edit user
+  const form = document.getElementById('form')
+
+  // Errors space
+  const errors = document.getElementById('erreurs')
+
+  // Get name input field reference from element form property
+  const nameInput = form.elements['name']
+
+  // Get email input field reference from element form property
+  const emailInput = form.elements['email']
+
+  // Use a variable to store user id when an existing user is edited
+  let editedUserId = null
+
+  /**
+   * Get user list item
+   * @params {String} id - user id
+   */
+  function getUserListItem (id) {
+    console.log(`CALL: getUserListItem (${id})`)
+    // Loop over list users
+    for (const li of Array.from(list.children)) {
+      // Check if current user id match with id given as parameter
+      if (li.dataset.id === id) {
+        return li
+      }
+    }
+  }
+
+  /**
+   * Call API to delete an user then remove user from list
+   * @params {String} id - user id
+   */
+  function deleteUser (id) {
+    console.log(`CALL: deleteUser (${id})`)
+    // Call API
+    axios.delete(`${usersEndpoint}/${id}`).then(() => {
+      const li = getUserListItem(id)
+      if (li) {
+          li.remove()
+          // Reset the ediitedUserId variable
+          if (editedUserId === id){
+              editedUserId = null
+          }
+      }
+    }).catch(err => {
+      // Catch errors
+      console.error(err)
+    })
+  }
+
+  /**
+   * Set editor values for an update
+   * @params {String} id - user id
+   */
+  function setEditedUser (id) {
+    console.log(`CALL: setEditedUser (${id})`)
+    // Store id of edited user
+    editedUserId = id
+    // Get list item
+    const listItem = getUserListItem(id)
+    // Set form values with  list item dataset
+    nameInput.value = listItem.dataset.name
+    emailInput.value = listItem.dataset.email
+  }
+
+  /**
+   * Set content of list with given user array
+   * @param users
+   * @param reset
+   */
+  function setListContent (users, reset = false) {
+    // If reset flag is set to true, clear list content
+    if (reset) {
+      list.innerText = ''
+    }
+
+    // Loop over users
+    for (const user of users) {
+      // Create a list item for each user
+      const li = document.createElement('li')
+      li.classList.add('user')
+      li.dataset.id = user.id
+      li.dataset.name = user.name
+      li.dataset.email = user.email
+
+      // Create text container element
+      const textElement = document.createElement('span')
+      textElement.classList.add('user__text')
+      textElement.innerHTML = `${user.name} - ${user.email}`
+      li.appendChild(textElement)
+
+      // Create action container
+      const actionContainer = document.createElement('div')
+      actionContainer.classList.add('user__action-container')
+      li.appendChild(actionContainer)
+
+      // Create button for edit action
+      const editIcon = document.createElement('i')
+      editIcon.classList.add('material-icons')
+      editIcon.innerHTML = 'edit'
+      const editBtn = document.createElement('button')
+      editBtn.classList.add('user__edit')
+      editBtn.appendChild(editIcon)
+      // Register edit button event handler
+      editBtn.addEventListener('click', function () {
+        setEditedUser(user.id)
+      }, false)
+      actionContainer.appendChild(editBtn)
+
+      // Create button for delete item action
+      const deleteIcon = document.createElement('i')
+      deleteIcon.classList.add('material-icons')
+      deleteIcon.innerHTML = 'delete'
+      const deleteBtn = document.createElement('button')
+      deleteBtn.classList.add('user__delete')
+      deleteBtn.appendChild(deleteIcon)
+      // Register delete button event handler
+      deleteBtn.addEventListener('click', function () {
+        deleteUser(user.id)
+      }, false)
+      actionContainer.appendChild(deleteBtn)
+
+      // Append created li element in users list
+      list.appendChild(li)
+    }
+  }
+
+  /**
+   * Get all users from API
+   */
+  function fetchUsers () {
+    console.log('CALL: fetchUsers')
+    // Make a request for a user with a given ID
+    axios.get('http://localhost:3000/users')
+      .then(function (response) {
+          //console.log(response.data)
+        setListContent(response.data, true)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  }
+
+  /**
+   * Submit form values
+   * @param event
+   */
+  function submitChanges (event) {
+    console.log('CALL: submitChanges')
+    // Prevent browser default behavior
+    event.preventDefault()
+    // Define method of http request
+    const method = editedUserId ? 'put' : 'post'
+    // Define url of http request
+    const url = editedUserId ? `${usersEndpoint}/${editedUserId}` : usersEndpoint
+    // Create object with form input's values
+    const data = {
+      name: nameInput.value,
+      email: emailInput.value
+    }
+    // Call web service
+    axios[method](url, data).then(({ data }) => {
+      // For an update get list item and update values
+      const listItem = getUserListItem(editedUserId)
+      if (listItem) {
+        // Update list item dataset values
+        listItem.dataset.name = data.name
+        listItem.dataset.email = data.email
+        // Get text container in list item
+        const textElement = listItem.querySelector('.user__text')
+        // Update text value
+        textElement.innerHTML = `${data.name} - ${data.email}`
+        // Reset the ediitedUserId variable
+        editedUserId = null
+      } else {
+        // Append created user in user list
+        setListContent([data])
+      }
+      // Clear form input's
+      form.reset()
+        displayNotifMessageCard("User successfuly created", "success")
+    }).catch(err => {
+        treatError(err)
+    })
+  }
+
+  function treatError(err) {
+      const { response } = err
+      if (response && response.status === 400){
+          const { data } = response
+          for (const err of data.details){
+              displayNotifMessageCard(err.message, 'error')
+          }
+      }
+      else {
+          console.error(err)
+      }
+  }
+
+  function displayNotifMessageCard(msg, type, seconds = 15){
+      const card = document.createElement('div')
+      card.classList.add(type)
+      card.innerHTML = msg
+
+      // Create button for delete item action
+      const deleteIcon = document.createElement('i')
+      deleteIcon.classList.add('material-icons')
+      deleteIcon.innerHTML = 'clear'
+      deleteIcon.style = "font-size:1em;"
+      const deleteBtn = document.createElement('button')
+      const classBtn = type+'__delete'
+      deleteBtn.classList.add(classBtn)
+      deleteBtn.appendChild(deleteIcon)
+      // Register delete button event handler
+      deleteBtn.addEventListener('click', function () {
+          card.remove()
+      }, false)
+
+      card.appendChild(deleteBtn)
+
+      notifContainer.appendChild(card)
+      setTimeout(() => {
+          card.remove()
+      }, seconds * 1000)
+  }
+
+  // Fetch users when user click on fetch users button
+  fetchBtn.addEventListener('click', fetchUsers, false)
+
+  // Submit changes when submit event is fired on form
+  form.addEventListener('submit', submitChanges, false)
+
+  // Fetch users when DOM content is loaded
+  window.addEventListener('DOMContentLoaded', fetchUsers, false)
+</script>
+</body>
+</html>
